@@ -6,9 +6,14 @@ module.exports = {
         assetsSubDirectory: 'static',
         assetsPublicPath: '/',
         proxyTable: {
-            '/Nivana.beta/': {
+            '/askprice': {
                 changeOrigin: true,
-                target: "http://test.firesec.cn",
+                target: "http://139.224.36.14:3380",
+                secure: false
+            },
+            '/auth': {
+                changeOrigin: true,
+                target: "http://139.224.36.14:3380",
                 secure: false
             }
         },

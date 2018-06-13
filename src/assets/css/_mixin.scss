@@ -3,7 +3,7 @@
  * @date:   2017/12/23
  */
 
-@import "~assets/css/var";
+@import "./var.scss";
 
 // flex
 @mixin flex($direction:row,$justify:space-between,$align:center){

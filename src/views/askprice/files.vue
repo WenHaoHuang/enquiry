@@ -1,12 +1,10 @@
 <template>
-    <div class="wrapper wrapper-flex">
-        this is askprice
-    </div>
+
 </template>
 
 <script>
     export default {
-        name: "index"
+        name: "files"
     }
 </script>
 
