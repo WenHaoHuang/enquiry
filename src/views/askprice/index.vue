@@ -33,42 +33,69 @@
                 <el-table-column
                     fixed
                     prop="inquiryid"
-                    label="询价编号"
+                    label="询价单号"
                     width="160">
                 </el-table-column>
                 <el-table-column
                     prop="contact"
-                    label="客户姓名"
+                    label="客户名称"
                     width="90">
                 </el-table-column>
                 <el-table-column
-                    prop="inquiryid"
-                    label="询价人"
-                    width="160">
-                </el-table-column>
-                <el-table-column
-                    prop="inquirydate"
-                    label="询价时间"
-                    width="160">
+                    prop="original"
+                    label="出发地"
+                    width="90">
                 </el-table-column>
                 <el-table-column
                     prop="oport"
-                    label="起运港"
-                    width="150">
+                    label="出发港"
+                    width="160">
                 </el-table-column>
                 <el-table-column
-                    prop="pickupaddress"
+                    prop="destination"
+                    label="目的地"
+                    width="160">
+                </el-table-column>
+                <el-table-column
+                    prop="dport"
                     label="目的港"
                     width="150">
                 </el-table-column>
                 <el-table-column
-                    prop="inquirydate"
-                    label="空海"
+                    prop="remarks"
+                    label="运输方式"
+                    width="150">
+                </el-table-column>
+                <el-table-column
+                    label="报价"
                     width="180">
+                    <template slot-scope="scope">
+                        <div class="btn btn-xs btn-primary">S013</div>
+                    </template>
                 </el-table-column>
                 <el-table-column
                     prop="inquirydate"
-                    label="询价时间"
+                    label="提交人"
+                    width="180">
+                </el-table-column>
+                <el-table-column
+                    prop="ctime"
+                    label="提交时间"
+                    width="180">
+                </el-table-column>
+                <el-table-column
+                    prop="submitter"
+                    label="接单人"
+                    width="180">
+                </el-table-column>
+                <el-table-column
+                    prop="utime"
+                    label="接单时间"
+                    width="180">
+                </el-table-column>
+                <el-table-column
+                    prop="state"
+                    label="状态"
                     width="180">
                 </el-table-column>
                 <el-table-column
