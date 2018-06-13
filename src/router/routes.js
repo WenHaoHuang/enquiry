@@ -92,6 +92,14 @@ const routes = [
                     title: '查询归档'
                 }
             },
+            {
+                name: 'askpriceInquiryDetail',
+                path: '/askprice/inquiry/detail',
+                component: resolve => require(['../views/askprice/inquiryDetail.vue'], resolve),
+                meta: {
+                    title: '询单详情'
+                }
+            },
         ]
     },
     {

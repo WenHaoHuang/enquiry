@@ -103,9 +103,10 @@
                     label="操作"
                     width="160">
                     <template slot-scope="scope">
-                        <div class="btn btn-xs btn-primary">详情</div>
-                        <div class="btn btn-xs btn-primary">报价</div>
-                        <div class="btn btn-xs btn-primary">归档</div>
+                        <div class="btn btn-xs btn-primary" @click="detailFn(scope.row)">详情</div>
+                        <div class="btn btn-xs btn-primary" v-if="rolecode == 'sales'">报价</div>
+                        <div class="btn btn-xs btn-primary" v-if="rolecode == 'sales'">归档</div>
+                        <div class="btn btn-xs btn-primary" v-if="rolecode == 'assistant'">上传报价</div>
                     </template>
                 </el-table-column>
             </el-table>
@@ -139,9 +140,9 @@
             }
         },
         mounted() {
+            this.rolecode = localStorage.getItem('rolecode');
             this.getBaseInfo();
             this.getInquiryList();
-            this.rolecode = localStorage.getItem('rolecode');
         },
         methods: {
             getBaseInfo() {
@@ -158,7 +159,7 @@
                 };
                 if (this.rolecode == 'sales') {
                     options['submitter'] = 'empNo'
-                } else if(this.rolecode == 'assistant'){
+                } else if (this.rolecode == 'assistant') {
                     options['receipter'] = 'empNo'
                 }
                 this.$ajax({
@@ -168,12 +169,19 @@
                     this.inquiryList = response.list;
                     this.pageBean.total = response.total;
                     this.pageBean.pageIndex = response.pageNum;
-
                 })
             },
             pageChange(pageIndex) {
                 this.pageBean.pageIndex = pageIndex
                 this.getInquiryList()
+            },
+            detailFn(item) {
+                this.$router.push({
+                    name: 'askpriceInquiryDetail',
+                    query: {
+                        inquiryid: item.inquiryid
+                    }
+                });
             }
         }
     }
